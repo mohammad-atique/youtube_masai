@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0px;
+    font-family: sans-serif;
+    overflow:hidden;
+}
+
+#container{
+  
+    /* border: 1px solid red; */
+    display: flex;
+  
+    /* grid-template-columns: 20% 80%;
+    grid-template-rows: 50%;
+    grid-gap: 3px; */
+   
+    
+}
+#leftSide{
+    /* border: 1px solid red; */
+    overflow: scroll;
+    width: 20%;
+    margin-top: 80px;
+    /* height: 300px; */
+}
+hr{
+    opacity: 0.3;
+}
+#leftSide>div{
+    height: 40px;
+    margin: 2px 5px 0 0px;
+    display: flex;
+    align-items: center;
+    
+}
+#leftSide>div:nth-child(1){
+    background-color: #d1d1d1;
+}
+#leftSide>div:hover{
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+#leftSide>div>span{
+    margin-left: 30px;
+}
+#containervid hr:nth-child(1){
+   margin-left: 0.2%;
+    margin-top: 80px;
+}
+#rightSide{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 600px;
+    padding-left: 3px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    position: relative;
+    overflow: scroll;
+}
+#rightSide>div{
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    
+    /* border: 1px solid red; */
+}
+#rightSide>div:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#rightSide>div>img{
+    width: 100%;
+    height: 150px;
+    /* border: 1px solid red; */
+}
+#rightSide>div>div>p:nth-child(1){
+    margin: 0;
+    margin-top: 5px;
+    padding: 5px 0px 0px 5px;
+    height: 40px;
+    /* border: 1px solid red; */
+    line-height: 130%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#rightSide>div>div>p:nth-child(2){
+    margin: 5px 0 0 0;
+    padding: 5px 0px 0px 5px;
+}
+#channelName{
+    color: rgb(175, 175, 175);
+    font-size: smaller;
+}
+#filter_container{
+    display: flex;
+    /* border: 1px solid red; */
+}
+#filter_container>div{
+    margin: 20px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+#filter_container>div:nth-child(1){
+    color: white;
+    background-color: black;
+}
+

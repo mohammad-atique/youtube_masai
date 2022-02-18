@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+#showContainer{
+    margin-top: 80px;
+    display: flex;
+    /* border: 1px solid red; */
+}
+#videoContainer{
+    
+    width: 60%;
+    /* border: 1px solid green; */
+    margin: 0 1%;
+}
+
+#allVidContainer{
+    width: 40%;
+    /* border: 1px solid black; */
+    overflow: scroll;
+    height: 600px;
+}
+#filter_container{
+    display: flex;
+}
+#filter_container>div{
+    margin: 20px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+#filter_container>div:nth-child(1){
+    color: white;
+    background-color: black;
+}
+#views_like{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#views_like>div:nth-child(1){
+    flex: 1.5;
+    /* border: 1px solid red; */
+}
+#views_like>div:nth-child(2){
+    display: flex;
+    flex: 1.5;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin: 0;
+
+}
+#views_like>div:nth-child(2)>div{
+    display: flex;
+    margin: 0;
+    padding: 0px;
+}
+#views_like>div:nth-child(2)>div>p{
+    margin:2px 5px;
+}
+
+#allvid>div{
+   
+display: flex;
+/* border: 1px solid red; */
+margin: 10px;
+cursor: pointer;
+}
+#allvid>div:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#allvid>div>img{
+    width: 40%;
+}
+#allvid>div>div>div{
+    margin-left: 10px;
+}
+#allvid>div>div>div>span{
+    margin-right: 20px;
+    color: #949494;
+    font-size: 14px;
+}
