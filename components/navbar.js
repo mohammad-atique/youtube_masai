@@ -11,7 +11,7 @@ function navbar(){
 <div id="centre">
     <div id="searchDiv">
         <div id="searchin"><input  type="text" name="search" id="search" placeholder="Search"></div>
-        <button onclick="searchVideoo()"><span class="material-icons">
+        <button ><span class="material-icons">
                 search
             </span></button>
     </div>

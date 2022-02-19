@@ -5,7 +5,11 @@ let navBar=document.getElementById("navBar");
 
 navBar.innerHTML=navbar();
 
+let btn = document.querySelector("#searchDiv>button");
 
+btn.addEventListener("click", function(){
+    searchVideoo();
+})
 
 
 
@@ -24,14 +28,16 @@ let url = `https://www.googleapis.com/youtube/v3/videos/?part=snippet&chart=most
 
 async function searchVideoo() {
     try {
+        
         let userInput = document.getElementById("search").value;
 
-        console.log(userInput)
-        // let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${userInput}&type=video&key=${api_key}`);
+       
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=48&q=${userInput}&type=video&key=${api_key}`);
 
-        // let data= await res.json();
+        let data= await res.json();
 
-        // console.log(data)
+        // console.log(data.items)
+        showVideos(data.items)
     } catch (err) {
         console.log(err);
     }
@@ -46,7 +52,7 @@ async function showData() {
     try {
         let response = await fetch(url);
         let data = await response.json();
-        console.log(data)
+        // console.log(data)
         showVideos(data.items)
 
     } catch (err) {
@@ -55,7 +61,7 @@ async function showData() {
 }
 let rightSide = document.getElementById("rightSide")
 let showVideos = (data) => {
-    console.log(data)
+    // console.log(data)
     rightSide.innerHTML = "";
     data.map((el) => {
         let mainDiv = document.createElement("div");

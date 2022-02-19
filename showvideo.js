@@ -5,7 +5,7 @@ let navBar=document.getElementById("navBar");
 navBar.innerHTML=navbar();
 
 
-let api_key = "AIzaSyBRzDYTQZuKHLJgfP_AW0ljG9pX7Kdm1xs";
+let api_key = "AIzaSyAuGOFHhqxN6Er-6PviJHJCFuCRHbIB3hU";
 
 
 let video= JSON.parse(localStorage.getItem("video"));
@@ -17,23 +17,30 @@ displayVid(video,allVid);
 async function displayVid(video,allVid){
     let iframe=document.querySelector("iframe");
 
+    let videoid;
+  if (video.id.videoId) {
+    videoid = video.id.videoId;
+  } else {
+    videoid = video.id;
+  }
+    
 
-    iframe.src= `https://www.youtube.com/embed/${video.id}`;
+    iframe.src= `https://www.youtube.com/embed/${videoid}`;
 
     let title=document.getElementById("title");
 
     title.innerText=video.snippet.title;
 
 
-    // console.log(video);
+    console.log(video);
 
-    let profile=`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${video.id}&key=${api_key}`
+    let profile=`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoid}&key=${api_key}`
     
     let p= await fetch(profile);
 
     let data= await p.json();
 
-    // console.log(data)
+    console.log(data)
     let viewsLikes=document.getElementById("views_like");
 
     let views=document.createElement("div");
@@ -75,7 +82,7 @@ async function displayVid(video,allVid){
   allVid.map((el)=>{
         if(el.snippet.title !== video.snippet.title){
             let div= document.createElement("div");
-            // console.log(el)
+            console.log(el)
             let vidImg = document.createElement("img");
             
             vidImg.src = el.snippet.thumbnails.medium.url;
@@ -87,7 +94,7 @@ async function displayVid(video,allVid){
             var title = document.createElement("p");
             title.innerText = el.snippet.title;
             var views = document.createElement("span");
-            let vieww=`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${el.id}&key=${api_key}`;
+            let vieww=`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${el.id.videoId||el.id}&key=${api_key}`;
 
             fetch(vieww)
                 .then((res)=>{
