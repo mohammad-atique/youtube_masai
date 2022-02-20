@@ -14,7 +14,7 @@ let allVid = JSON.parse(localStorage.getItem("allVid"));
 
 displayVid(video,allVid);
 
-async function displayVid(video,allVid){
+let displayVid = async (video,allVid)=> {
     let iframe=document.querySelector("iframe");
 
     let videoid;
@@ -32,7 +32,7 @@ async function displayVid(video,allVid){
     title.innerText=video.snippet.title;
 
 
-    console.log(video);
+    // console.log(video);
 
     let profile=`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoid}&key=${api_key}`
     
@@ -40,7 +40,7 @@ async function displayVid(video,allVid){
 
     let data= await p.json();
 
-    console.log(data)
+    // console.log(data)
     let viewsLikes=document.getElementById("views_like");
 
     let views=document.createElement("div");
@@ -138,7 +138,7 @@ async function displayVid(video,allVid){
 }
 
 
-function showVid(data,el){
+let  showVid= (data,el)=>{
     // console.log(el)
     localStorage.setItem("video",JSON.stringify(el));
     localStorage.setItem("allVid",JSON.stringify(data));
@@ -147,7 +147,7 @@ function showVid(data,el){
 }
 
 
-function numFormatter(num) {
+let numFormatter= (num)=> {
     if(num > 999 && num < 1000000){
         return (num/1000).toFixed(1) + ' K'; // convert to K for number from > 1000 < 1 million 
     }else if(num > 1000000 && num < 1000000000){

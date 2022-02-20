@@ -26,7 +26,7 @@ let url = `https://www.googleapis.com/youtube/v3/videos/?part=snippet&chart=most
 // let searchResults = document.getElementById("searchResults");
 
 
-async function searchVideoo() {
+let searchVideoo= async ()=> {
     try {
         
         let userInput = document.getElementById("search").value;
@@ -48,7 +48,7 @@ async function searchVideoo() {
 
 showData();
 
-async function showData() {
+let showData= async ()=> {
     try {
         let response = await fetch(url);
         let data = await response.json();
@@ -59,7 +59,9 @@ async function showData() {
         console.log(err)
     }
 }
+
 let rightSide = document.getElementById("rightSide")
+
 let showVideos = (data) => {
     // console.log(data)
     rightSide.innerHTML = "";
@@ -93,8 +95,8 @@ let showVideos = (data) => {
     })
 }
 
-function showVid(data,el){
-    console.log(el)
+let showVid= (data,el)=>{
+    // console.log(el)
     localStorage.setItem("video",JSON.stringify(el));
     localStorage.setItem("allVid",JSON.stringify(data));
     window.location.href="showvideo.html"

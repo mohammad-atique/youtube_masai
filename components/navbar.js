@@ -1,4 +1,4 @@
-function navbar(){
+let  navbar= ()=>{
   return  `<div id="left">
     <div><span class="material-icons">
             menu
