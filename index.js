@@ -100,3 +100,5 @@ function showVid(data,el){
     window.location.href="showvideo.html"
      
 }
+
+
