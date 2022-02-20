@@ -67,6 +67,7 @@ body{
     margin: auto;
     /* border: 1px solid red; */
     width: 100%;
+    cursor: pointer;
 }
 #searchDiv>button>span{
     font-size: 30px;
