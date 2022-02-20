@@ -46,7 +46,7 @@ let searchVideoo= async ()=> {
 
 // showing most popular videos
 
-showData();
+
 
 let showData= async ()=> {
     try {
@@ -59,6 +59,7 @@ let showData= async ()=> {
         console.log(err)
     }
 }
+showData();
 
 let rightSide = document.getElementById("rightSide")
 

@@ -12,7 +12,7 @@ let video= JSON.parse(localStorage.getItem("video"));
 
 let allVid = JSON.parse(localStorage.getItem("allVid"));
 
-displayVid(video,allVid);
+
 
 let displayVid = async (video,allVid)=> {
     let iframe=document.querySelector("iframe");
@@ -23,6 +23,8 @@ let displayVid = async (video,allVid)=> {
   } else {
     videoid = video.id;
   }
+
+  displayVid(video,allVid);
     
 
     iframe.src= `https://www.youtube.com/embed/${videoid}`;
