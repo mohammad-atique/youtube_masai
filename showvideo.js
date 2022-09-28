@@ -5,7 +5,7 @@ let navBar=document.getElementById("navBar");
 navBar.innerHTML=navbar();
 
 
-let api_key = "AIzaSyAuGOFHhqxN6Er-6PviJHJCFuCRHbIB3hU";
+let api_key = "AIzaSyBRzDYTQZuKHLJgfP_AW0ljG9pX7Kdm1xs";
 
 
 let video= JSON.parse(localStorage.getItem("video"));
